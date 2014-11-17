@@ -26,4 +26,8 @@ class TopicTests: XCTestCase {
         XCTAssertNotNil(topic, "should be able to create a Topic")
     }
 
+    func testThatTopicCanBeNamed() {
+        let topic = Topic(name: "iPhone")
+        XCTAssertEqual(topic.name, "iPhone", "the Topic should have the name I gave it.")
+    }
 }
