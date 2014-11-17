@@ -14,4 +14,8 @@ class Topic {
         self.name = name
         self.tag = tag
     }
+    
+    var recentQuestions: [Question] {
+        return [Question]()
+    }
 }

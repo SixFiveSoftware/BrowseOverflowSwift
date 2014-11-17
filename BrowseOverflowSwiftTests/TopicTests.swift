@@ -35,4 +35,10 @@ class TopicTests: XCTestCase {
     func testThatTopicHasATag() {
         XCTAssertEqual(topic.tag, "iphone", "Topics need to have tags")
     }
+    
+    /*
+    func testForAListOfQuestions() {
+        XCTAssertTrue(topic.recentQuestions is [Question], "Topics should provide a list of recent questions")
+    }
+    */  // this test doesn't make sense in Swift since it is stronly typed to return [Question]
 }
