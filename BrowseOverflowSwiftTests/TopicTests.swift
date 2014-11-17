@@ -68,4 +68,13 @@ class TopicTests: XCTestCase {
         
         XCTAssertEqual(listedFirst.date.laterDate(listedSecond.date), listedFirst.date, "The later question should appear first in the list")
     }
+    
+    func testLimitOfTwentyQuestions() {
+        let question = Question()
+        for _ in 0..<25 {
+            topic.addQuestion(question)
+        }
+        
+        XCTAssertTrue(topic.recentQuestions.count < 21, "There should never be more than 20 questions")
+    }
 }

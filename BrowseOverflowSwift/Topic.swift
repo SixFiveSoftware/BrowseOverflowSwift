@@ -19,7 +19,7 @@ class Topic {
         self.questions = [Question]()
     }
     
-    var recentQuestions: [Question] {
+    private func sortQuestionsLatestFirst(questions: [Question]) -> [Question] {
         let sortedQuestions = questions.sorted { (q1: Question, q2: Question) in
             let result = q2.date.compare(q1.date)
             switch result {
@@ -32,7 +32,17 @@ class Topic {
         return sortedQuestions
     }
     
+    var recentQuestions: [Question] {
+        return sortQuestionsLatestFirst(questions)
+    }
+    
     func addQuestion(question: Question) {
-        questions.append(question)
+        var newQuestions = questions
+        newQuestions.append(question)
+        if (newQuestions.count > 20) {
+            newQuestions = sortQuestionsLatestFirst(newQuestions)
+            newQuestions = Array(newQuestions[Range(start: 0, end: 20)])
+        }
+        questions = newQuestions
     }
 }
