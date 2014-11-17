@@ -41,4 +41,31 @@ class TopicTests: XCTestCase {
         XCTAssertTrue(topic.recentQuestions is [Question], "Topics should provide a list of recent questions")
     }
     */  // this test doesn't make sense in Swift since it is stronly typed to return [Question]
+    
+    func testForInitiallyEmptyQuestionsList() {
+        XCTAssertEqual(topic.recentQuestions.count, 0, "No questions added yet, count should be zero")
+    }
+    
+    func testAddingAQuestionToTheList() {
+        let question = Question()
+        topic.addQuestion(question)
+        XCTAssertEqual(topic.recentQuestions.count, 1, "Add a question and the count of questions should go up")
+    }
+    
+    func testQuestionsAreListedChronologically() {
+        let question1 = Question()
+        question1.date = NSDate.distantPast() as NSDate
+        
+        let question2 = Question()
+        question2.date = NSDate.distantFuture() as NSDate
+        
+        topic.addQuestion(question1)
+        topic.addQuestion(question2)
+        
+        let questions = topic.recentQuestions
+        let listedFirst: Question = questions[0]
+        let listedSecond: Question = questions[1]
+        
+        XCTAssertEqual(listedFirst.date.laterDate(listedSecond.date), listedFirst.date, "The later question should appear first in the list")
+    }
 }

@@ -10,4 +10,6 @@ import Foundation
 
 class Question {
     var date = NSDate()
+    var title = ""
+    var score = 0
 }

@@ -11,9 +11,15 @@ import XCTest
 
 class QuestionTests: XCTestCase {
 
+    var question: Question!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        question = Question()
+        question.date = NSDate.distantPast() as NSDate
+        question.title = "Do iPhones also dream of electric sheep?"
+        question.score = 42
     }
     
     override func tearDown() {
@@ -26,6 +32,14 @@ class QuestionTests: XCTestCase {
         let testDate = NSDate.distantPast() as NSDate
         question.date = testDate
         XCTAssertEqual(question.date, testDate, "Question needs to provide its date")
+    }
+    
+    func testQuestionKeepsScore() {
+        XCTAssertEqual(question.score, 42, "Quesiton needs to have a numeric score")
+    }
+    
+    func testQuestionHasATitle() {
+        XCTAssertEqual(question.title, "Do iPhones also dream of electric sheep?", "Question should know its title")
     }
 
 }
