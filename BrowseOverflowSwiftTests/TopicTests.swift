@@ -11,9 +11,12 @@ import XCTest
 
 class TopicTests: XCTestCase {
 
+    var topic: Topic!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        topic = Topic(name: "iPhone", tag: "iphone")
     }
     
     override func tearDown() {
@@ -22,12 +25,14 @@ class TopicTests: XCTestCase {
     }
 
     func testThatTopicExists() {
-        let topic = Topic()
         XCTAssertNotNil(topic, "should be able to create a Topic")
     }
 
     func testThatTopicCanBeNamed() {
-        let topic = Topic(name: "iPhone")
         XCTAssertEqual(topic.name, "iPhone", "the Topic should have the name I gave it.")
+    }
+    
+    func testThatTopicHasATag() {
+        XCTAssertEqual(topic.tag, "iphone", "Topics need to have tags")
     }
 }
