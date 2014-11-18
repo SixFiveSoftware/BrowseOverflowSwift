@@ -12,4 +12,23 @@ class Question {
     var date = NSDate()
     var title = ""
     var score = 0
+    
+    private var _answerSet = NSMutableSet()
+    
+    var answers: [Answer] {
+        let _answers = _answerSet.allObjects as [Answer]
+        return _answers.sorted { (a1: Answer, a2: Answer) in
+            let result = a2.compare(a1)
+            switch result {
+            case .OrderedDescending:
+                return true
+            default:
+                return false
+            }
+        }
+    }
+    
+    func addAnswer(answer: Answer) {
+        _answerSet.addObject(answer)
+    }
 }

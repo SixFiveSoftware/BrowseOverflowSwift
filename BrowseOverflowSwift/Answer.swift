@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Answer {
+class Answer: Equatable {
     var text = ""
-    var person: Person?
+    var person: Person!
     var score = 0
     var accepted = false
     
@@ -30,4 +30,8 @@ struct Answer {
             return .OrderedSame
         }
     }
+}
+
+func ==(lhs: Answer, rhs: Answer) -> Bool {
+    return lhs.text == rhs.text && /*lhs.person == rhs.person &&*/ lhs.score == rhs.score && lhs.accepted == rhs.accepted
 }

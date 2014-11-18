@@ -12,6 +12,8 @@ import XCTest
 class QuestionTests: XCTestCase {
 
     var question: Question!
+    var lowScore: Answer!
+    var highScore: Answer!
 
     override func setUp() {
         super.setUp()
@@ -20,6 +22,19 @@ class QuestionTests: XCTestCase {
         question.date = NSDate.distantPast() as NSDate
         question.title = "Do iPhones also dream of electric sheep?"
         question.score = 42
+        
+        var accepted = Answer()
+        accepted.score = 1
+        accepted.accepted = true
+        question.addAnswer(accepted)
+        
+        lowScore = Answer()
+        lowScore.score = -4
+        question.addAnswer(lowScore)
+        
+        highScore = Answer()
+        highScore.score = 4
+        question.addAnswer(highScore)
     }
     
     override func tearDown() {
@@ -40,6 +55,24 @@ class QuestionTests: XCTestCase {
     
     func testQuestionHasATitle() {
         XCTAssertEqual(question.title, "Do iPhones also dream of electric sheep?", "Question should know its title")
+    }
+    
+    func testQuestionCanHaveAnswersAdded() {
+        let myAnswer = Answer()
+        let currentAnswerCount = question.answers.count
+        question.addAnswer(myAnswer)
+        XCTAssertEqual(question.answers.count, currentAnswerCount + 1, "Must be able to add answers")
+    }
+    
+    func testAcceptedAnswerIsFirst() {
+        XCTAssertTrue(question.answers[0].accepted, "Accepted answer comes first")
+    }
+    
+    func testHighScoreAnswerBeforeLow() {
+        let answers = question.answers
+        let highIndex = find(answers, highScore)!
+        let lowIndex = find(answers, lowScore)!
+        XCTAssertTrue(highIndex < lowIndex, "High-scoring answer comes first")
     }
 
 }
