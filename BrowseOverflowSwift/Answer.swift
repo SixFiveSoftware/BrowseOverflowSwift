@@ -30,3 +30,13 @@ func <(lhs: Answer, rhs: Answer) -> Bool {
     
     return lhs.score > rhs.score
 }
+
+func >(lhs: Answer, rhs: Answer) -> Bool {
+    if lhs.accepted && !rhs.accepted {
+        return false
+    } else if !lhs.accepted && rhs.accepted {
+        return true
+    }
+    
+    return lhs.score < rhs.score
+}
