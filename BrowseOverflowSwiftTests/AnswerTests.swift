@@ -70,8 +70,4 @@ class AnswerTests: XCTestCase {
         XCTAssertGreaterThan(answer, otherAnswer, "Lower score should come last")
     }
     
-    func testFailure() {
-        XCTFail("FAIL!!!")
-    }
-    
 }
