@@ -27,7 +27,6 @@ class AnswerTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 
@@ -56,19 +55,23 @@ class AnswerTests: XCTestCase {
         otherAnswer.accepted = true
         otherAnswer.score = answer.score + 10
         
-        XCTAssertEqual(answer.compare(otherAnswer), NSComparisonResult.OrderedDescending, "Accepted answer should come first")
-        XCTAssertEqual(otherAnswer.compare(answer), NSComparisonResult.OrderedAscending, "Unaccepted answer should come last")
+        XCTAssertTrue(otherAnswer < answer, "Accepted answer should come first")
+        XCTAssertTrue(answer > otherAnswer, "Unaccepted answer should come last")
     }
     
     func testAnswersWithEqualScoresCompareEqually() {
-        XCTAssertEqual(answer.compare(otherAnswer), NSComparisonResult.OrderedSame, "")
-        XCTAssertEqual(otherAnswer.compare(answer), NSComparisonResult.OrderedSame, "")
+        XCTAssertEqual(answer, otherAnswer, "answers with equal scores should compare equally")
+        XCTAssertEqual(otherAnswer, answer, "answers with equal scores should compare equally")
     }
 
     func testLowerScoringAnswerComesAfterHigher() {
         otherAnswer.score = answer.score + 10
-        XCTAssertEqual(answer.compare(otherAnswer), NSComparisonResult.OrderedDescending, "Higher score comes first")
-        XCTAssertEqual(otherAnswer.compare(answer), NSComparisonResult.OrderedAscending, "Lower score comes first")
+        XCTAssertLessThan(otherAnswer, answer, "Higher score should come first")
+        XCTAssertGreaterThan(answer, otherAnswer, "Lower score should come last")
+    }
+    
+    func testFailure() {
+        XCTFail("FAIL!!!")
     }
     
 }

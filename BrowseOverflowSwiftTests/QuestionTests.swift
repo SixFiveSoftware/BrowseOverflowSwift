@@ -65,7 +65,9 @@ class QuestionTests: XCTestCase {
     }
     
     func testAcceptedAnswerIsFirst() {
-        XCTAssertTrue(question.answers[0].accepted, "Accepted answer comes first")
+        let firstAnswer = question.answers[0]
+        let isAccepted = firstAnswer.accepted
+        XCTAssertTrue(isAccepted, "Accepted answer comes first")
     }
     
     func testHighScoreAnswerBeforeLow() {

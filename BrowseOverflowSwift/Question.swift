@@ -17,15 +17,11 @@ class Question {
     
     var answers: [Answer] {
         let _answers = _answerSet.allObjects as [Answer]
-        return _answers.sorted { (a1: Answer, a2: Answer) in
-            let result = a2.compare(a1)
-            switch result {
-            case .OrderedDescending:
-                return true
-            default:
-                return false
-            }
+        let _sorted = _answers.sorted(<)
+        for (i, answer) in enumerate(_answers) {
+            println("answer:\(i) -- score:\(answer.score), accepted:\(answer.accepted)")
         }
+        return _answers.sorted(<)
     }
     
     func addAnswer(answer: Answer) {
