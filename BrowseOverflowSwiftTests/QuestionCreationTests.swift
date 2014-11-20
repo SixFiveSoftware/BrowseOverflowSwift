@@ -41,5 +41,13 @@ class QuestionCreationTests: XCTestCase {
         manager?.delegate = nil
         XCTAssertNil(manager?.delegate, "It should be acceptable to use nil as an object's delegate")
     }
+    
+    func testAskingForQuestionsMeansRequestingData() {
+        let communicator = MockStackOverflowCommunicator()
+        manager!.communicator = communicator
+        let topic = Topic(name: "iPhone", tag: "iphone")
+        manager!.fetchQuestionsOnTopic(topic)
+        XCTAssertTrue(communicator.wasAskedToFetchQuestions, "The communicator should need to fetch data.")
+    }
 
 }

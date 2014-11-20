@@ -8,5 +8,11 @@
 
 class StackOverflowManager {
     weak var delegate: StackOverflowManagerDelegate?
+    var communicator: StackOverflowCommunicator?
+    
     init() {}
+    
+    func fetchQuestionsOnTopic(topic: Topic) {
+        communicator?.searchForQuestionsWithTag(topic.tag)
+    }
 }
