@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Question {
+class Question : Equatable {
     var date = NSDate()
     var title = ""
     var score = 0
@@ -27,4 +27,12 @@ class Question {
     func addAnswer(answer: Answer) {
         _answerSet.addObject(answer)
     }
+}
+
+func ==(lhs: Question, rhs: Question) -> Bool {
+    var result = true
+    result = result && (lhs.date.compare(rhs.date) == NSComparisonResult.OrderedSame)
+    result = result && (lhs.title == rhs.title)
+    result = result && (lhs.score == rhs.score)
+    return result
 }

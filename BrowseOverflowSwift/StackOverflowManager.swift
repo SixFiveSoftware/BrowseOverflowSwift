@@ -17,6 +17,7 @@ enum StackOverflowManagerErrorQuestionCode : Int {
 class StackOverflowManager {
     weak var delegate: StackOverflowManagerDelegate?
     var communicator: StackOverflowCommunicator?
+    var questionBuilder: QuestionBuilder?
     
     init() {}
     
@@ -24,9 +25,28 @@ class StackOverflowManager {
         communicator?.searchForQuestionsWithTag(topic.tag)
     }
     
+    private func tellDelegateAboutQuestionSearchError(errorInfo: [NSObject : NSError]!) {
+        let reportableError = NSError(domain: StackOverflowManagerSearchFailedError, code: StackOverflowManagerErrorQuestionCode.Search.rawValue, userInfo: errorInfo)
+        delegate?.fetchingQuestionsFailedWithError(reportableError)
+    }
+    
     func searchingForQuestionsFailedWithError(error: NSError) {
         let errorInfo = [NSUnderlyingErrorKey : error]
-        let reportableError = NSError(domain: StackOverflowManagerSearchFailedError, code: StackOverflowManagerErrorQuestionCode.Search.rawValue, userInfo: errorInfo)
-        delegate?.fetchingQuestionsOnTopic(nil, failedWithError: reportableError)
+        tellDelegateAboutQuestionSearchError(errorInfo)
+    }
+    
+    func receivedQuestionsJSON(objectNotation: String) {
+        if questionBuilder != nil {
+            let (questions, error) = questionBuilder!.questionsFromJSON(objectNotation)
+            if questions == nil {
+                var errorInfo: [NSObject : NSError]!
+                if error != nil {
+                    errorInfo = [NSUnderlyingErrorKey : error]
+                }
+                tellDelegateAboutQuestionSearchError(errorInfo)
+            } else {
+                delegate?.didReceiveQuestions(questions)
+            }
+        }
     }
 }
