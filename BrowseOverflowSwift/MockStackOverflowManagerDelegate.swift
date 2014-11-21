@@ -10,4 +10,11 @@ import Foundation
 
 class MockStackOverflowManagerDelegate: StackOverflowManagerDelegate {
     
+    var fetchError: NSError?
+    
+    init() {}
+    
+    func fetchingQuestionsOnTopic(topic: Topic?, failedWithError error: NSError) {
+        fetchError = error
+    }
 }

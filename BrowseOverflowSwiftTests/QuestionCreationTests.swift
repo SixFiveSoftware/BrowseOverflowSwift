@@ -49,5 +49,25 @@ class QuestionCreationTests: XCTestCase {
         manager!.fetchQuestionsOnTopic(topic)
         XCTAssertTrue(communicator.wasAskedToFetchQuestions, "The communicator should need to fetch data.")
     }
+    
+    func testErrorReturnedToDelegateIsNotErrorNotifiedByCommunicator() {
+        let delegate = MockStackOverflowManagerDelegate()
+        manager?.delegate = delegate
+        let underlyingError = NSError(domain: "Test domain", code: 0, userInfo: nil)
+        manager?.searchingForQuestionsFailedWithError(underlyingError)
+        XCTAssertFalse(underlyingError == delegate.fetchError, "Error should be at the correct level of abstraction")
+    }
+    
+    func testErrorReturnedToDelegateDocumentsUnderlyingError() {
+        let delegate = MockStackOverflowManagerDelegate()
+        manager?.delegate = delegate
+        let underlyingError = NSError(domain: "Test domain", code: 0, userInfo: nil)
+        manager?.searchingForQuestionsFailedWithError(underlyingError)
+        if let underlyingFetchError = delegate.fetchError?.userInfo?[NSUnderlyingErrorKey] as? NSError {
+            XCTAssertEqual(underlyingFetchError, underlyingError, "The underlying error should be availalbe to client code")
+        } else {
+            XCTFail("Could not obtain underlying error")
+        }
+    }
 
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol StackOverflowManagerDelegate: class {
-    
+    func fetchingQuestionsOnTopic(topic: Topic?, failedWithError error: NSError)
 }
