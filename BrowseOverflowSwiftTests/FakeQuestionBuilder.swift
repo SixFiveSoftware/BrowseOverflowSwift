@@ -13,7 +13,7 @@ class FakeQuestionBuilder: QuestionBuilder {
     var arrayToReturn: [Question]!
     var errorToSet: NSError!
     
-    override func questionsFromJSON(json: String) -> ([Question]!, NSError!) {
+    override func questionsFromJSON(json: String!) -> ([Question]!, NSError!) {
         self.JSON = json
         return (arrayToReturn, errorToSet)
     }

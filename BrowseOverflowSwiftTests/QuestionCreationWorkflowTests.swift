@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class QuestionCreationTests: XCTestCase {
+class QuestionCreationWorkflowTests: XCTestCase {
 
     var manager: StackOverflowManager?
     var delegate: MockStackOverflowManagerDelegate?
