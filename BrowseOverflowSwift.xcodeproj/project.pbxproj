@@ -12,9 +12,21 @@
 		3B619FF01A1A3B88002D8668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B619FEE1A1A3B88002D8668 /* Main.storyboard */; };
 		3B619FF21A1A3B88002D8668 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B619FF11A1A3B88002D8668 /* Images.xcassets */; };
 		3B619FF51A1A3B88002D8668 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B619FF31A1A3B88002D8668 /* LaunchScreen.xib */; };
+		3B6598121A1E7C99007EAA83 /* QuestionCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6598111A1E7C99007EAA83 /* QuestionCreationTests.swift */; };
+		3B6598151A1E7D17007EAA83 /* StackOverflowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6598141A1E7D17007EAA83 /* StackOverflowManager.swift */; };
+		3B6598161A1E7D17007EAA83 /* StackOverflowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6598141A1E7D17007EAA83 /* StackOverflowManager.swift */; };
+		3B6598191A1E7F12007EAA83 /* StackOverflowManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6598181A1E7F12007EAA83 /* StackOverflowManagerDelegate.swift */; };
+		3B65981A1A1E7F12007EAA83 /* StackOverflowManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6598181A1E7F12007EAA83 /* StackOverflowManagerDelegate.swift */; };
+		3B65981C1A1E825D007EAA83 /* MockStackOverflowManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B65981B1A1E825D007EAA83 /* MockStackOverflowManagerDelegate.swift */; };
 		3B6CF2F01A1A4412007F89D3 /* TopicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6CF2EF1A1A4412007F89D3 /* TopicTests.swift */; };
 		3B6CF2F31A1A4486007F89D3 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6CF2F21A1A4486007F89D3 /* Topic.swift */; };
 		3B6CF2F41A1A4486007F89D3 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6CF2F21A1A4486007F89D3 /* Topic.swift */; };
+		3B6D03681A1E90B000C7BD33 /* StackOverflowCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D03671A1E90B000C7BD33 /* StackOverflowCommunicator.swift */; };
+		3B6D03691A1E90B000C7BD33 /* StackOverflowCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D03671A1E90B000C7BD33 /* StackOverflowCommunicator.swift */; };
+		3B6D036B1A1E90D200C7BD33 /* MockStackOverflowCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D036A1A1E90D200C7BD33 /* MockStackOverflowCommunicator.swift */; };
+		3B6D036E1A1F6C2700C7BD33 /* QuestionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D036D1A1F6C2700C7BD33 /* QuestionBuilder.swift */; };
+		3B6D036F1A1F6C2700C7BD33 /* QuestionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D036D1A1F6C2700C7BD33 /* QuestionBuilder.swift */; };
+		3B6D03711A1F6DA500C7BD33 /* FakeQuestionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D03701A1F6DA500C7BD33 /* FakeQuestionBuilder.swift */; };
 		3B6F5DC11A1B7569001E46A5 /* AnswerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F5DC01A1B7569001E46A5 /* AnswerTests.swift */; };
 		3B6F5DC31A1B757B001E46A5 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F5DC21A1B757B001E46A5 /* Answer.swift */; };
 		3B6F5DC41A1B757B001E46A5 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F5DC21A1B757B001E46A5 /* Answer.swift */; };
@@ -46,8 +58,16 @@
 		3B619FF41A1A3B88002D8668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3B619FFA1A1A3B88002D8668 /* BrowseOverflowSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowseOverflowSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B619FFF1A1A3B88002D8668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B6598111A1E7C99007EAA83 /* QuestionCreationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCreationTests.swift; sourceTree = "<group>"; };
+		3B6598141A1E7D17007EAA83 /* StackOverflowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackOverflowManager.swift; sourceTree = "<group>"; };
+		3B6598181A1E7F12007EAA83 /* StackOverflowManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackOverflowManagerDelegate.swift; sourceTree = "<group>"; };
+		3B65981B1A1E825D007EAA83 /* MockStackOverflowManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStackOverflowManagerDelegate.swift; sourceTree = "<group>"; };
 		3B6CF2EF1A1A4412007F89D3 /* TopicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTests.swift; sourceTree = "<group>"; };
 		3B6CF2F21A1A4486007F89D3 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		3B6D03671A1E90B000C7BD33 /* StackOverflowCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackOverflowCommunicator.swift; sourceTree = "<group>"; };
+		3B6D036A1A1E90D200C7BD33 /* MockStackOverflowCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStackOverflowCommunicator.swift; sourceTree = "<group>"; };
+		3B6D036D1A1F6C2700C7BD33 /* QuestionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBuilder.swift; sourceTree = "<group>"; };
+		3B6D03701A1F6DA500C7BD33 /* FakeQuestionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeQuestionBuilder.swift; sourceTree = "<group>"; };
 		3B6F5DC01A1B7569001E46A5 /* AnswerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTests.swift; sourceTree = "<group>"; };
 		3B6F5DC21A1B757B001E46A5 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		3BBE839A1A1A6BA100125912 /* QuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTests.swift; sourceTree = "<group>"; };
@@ -95,6 +115,10 @@
 		3B619FE71A1A3B88002D8668 /* BrowseOverflowSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3B6D036C1A1F6C1200C7BD33 /* Builders */,
+				3B6D03661A1E909A00C7BD33 /* Communicators */,
+				3B6598171A1E7E67007EAA83 /* Protocols */,
+				3B6598131A1E7D07007EAA83 /* Managers */,
 				3B6CF2F11A1A4472007F89D3 /* Models */,
 				3B619FEA1A1A3B88002D8668 /* AppDelegate.swift */,
 				3B619FEC1A1A3B88002D8668 /* ViewController.swift */,
@@ -122,6 +146,8 @@
 				3BBE839A1A1A6BA100125912 /* QuestionTests.swift */,
 				3BBE839F1A1A721500125912 /* PersonTests.swift */,
 				3B6F5DC01A1B7569001E46A5 /* AnswerTests.swift */,
+				3B6598111A1E7C99007EAA83 /* QuestionCreationTests.swift */,
+				3B6D03701A1F6DA500C7BD33 /* FakeQuestionBuilder.swift */,
 			);
 			path = BrowseOverflowSwiftTests;
 			sourceTree = "<group>";
@@ -134,6 +160,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3B6598131A1E7D07007EAA83 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3B6598141A1E7D17007EAA83 /* StackOverflowManager.swift */,
+				3B65981B1A1E825D007EAA83 /* MockStackOverflowManagerDelegate.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		3B6598171A1E7E67007EAA83 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3B6598181A1E7F12007EAA83 /* StackOverflowManagerDelegate.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		3B6CF2F11A1A4472007F89D3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +186,23 @@
 				3B6F5DC21A1B757B001E46A5 /* Answer.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		3B6D03661A1E909A00C7BD33 /* Communicators */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D03671A1E90B000C7BD33 /* StackOverflowCommunicator.swift */,
+				3B6D036A1A1E90D200C7BD33 /* MockStackOverflowCommunicator.swift */,
+			);
+			name = Communicators;
+			sourceTree = "<group>";
+		};
+		3B6D036C1A1F6C1200C7BD33 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D036D1A1F6C2700C7BD33 /* QuestionBuilder.swift */,
+			);
+			name = Builders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,11 +306,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BBE83A21A1A72C800125912 /* Person.swift in Sources */,
+				3B6598191A1E7F12007EAA83 /* StackOverflowManagerDelegate.swift in Sources */,
 				3B619FED1A1A3B88002D8668 /* ViewController.swift in Sources */,
 				3BBE839D1A1A6BE700125912 /* Question.swift in Sources */,
+				3B6598151A1E7D17007EAA83 /* StackOverflowManager.swift in Sources */,
 				3B6F5DC31A1B757B001E46A5 /* Answer.swift in Sources */,
+				3B6D03681A1E90B000C7BD33 /* StackOverflowCommunicator.swift in Sources */,
 				3B6CF2F31A1A4486007F89D3 /* Topic.swift in Sources */,
 				3B619FEB1A1A3B88002D8668 /* AppDelegate.swift in Sources */,
+				3B6D036E1A1F6C2700C7BD33 /* QuestionBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,14 +322,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B65981A1A1E7F12007EAA83 /* StackOverflowManagerDelegate.swift in Sources */,
+				3B6D03691A1E90B000C7BD33 /* StackOverflowCommunicator.swift in Sources */,
 				3BBE83A31A1A72C800125912 /* Person.swift in Sources */,
+				3B6598121A1E7C99007EAA83 /* QuestionCreationTests.swift in Sources */,
+				3B6598161A1E7D17007EAA83 /* StackOverflowManager.swift in Sources */,
 				3B6F5DC11A1B7569001E46A5 /* AnswerTests.swift in Sources */,
 				3B6CF2F01A1A4412007F89D3 /* TopicTests.swift in Sources */,
 				3BBE839E1A1A6BE700125912 /* Question.swift in Sources */,
 				3BBE83A01A1A721500125912 /* PersonTests.swift in Sources */,
+				3B6D036F1A1F6C2700C7BD33 /* QuestionBuilder.swift in Sources */,
+				3B6D03711A1F6DA500C7BD33 /* FakeQuestionBuilder.swift in Sources */,
 				3B6CF2F41A1A4486007F89D3 /* Topic.swift in Sources */,
 				3BBE839B1A1A6BA100125912 /* QuestionTests.swift in Sources */,
+				3B6D036B1A1E90D200C7BD33 /* MockStackOverflowCommunicator.swift in Sources */,
 				3B6F5DC41A1B757B001E46A5 /* Answer.swift in Sources */,
+				3B65981C1A1E825D007EAA83 /* MockStackOverflowManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
