@@ -10,8 +10,11 @@ import Foundation
 
 class Question : Equatable {
     var date = NSDate()
-    var title = ""
+    var title: String!
     var score = 0
+    var questionID: Int!
+    var asker: Person!
+    var body: String!
     
     private var _answerSet = NSMutableSet()
     
@@ -24,15 +27,21 @@ class Question : Equatable {
         return _answers.sorted(<)
     }
     
+    init() {}
+    
     func addAnswer(answer: Answer) {
         _answerSet.addObject(answer)
     }
 }
 
 func ==(lhs: Question, rhs: Question) -> Bool {
+    //TODO: update to only be equal when questionID is the same
+    /*
     var result = true
     result = result && (lhs.date.compare(rhs.date) == NSComparisonResult.OrderedSame)
     result = result && (lhs.title == rhs.title)
     result = result && (lhs.score == rhs.score)
     return result
+*/
+    return (lhs.questionID ?? 1) == (rhs.questionID ?? 0)
 }

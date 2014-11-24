@@ -12,6 +12,7 @@ class MockStackOverflowManagerDelegate: StackOverflowManagerDelegate {
     
     var fetchError: NSError?
     var receivedQuestions: [Question]?
+    var bodyQuestion: Question?
     
     init() {}
     
@@ -21,5 +22,9 @@ class MockStackOverflowManagerDelegate: StackOverflowManagerDelegate {
     
     func didReceiveQuestions(questions: [Question]) {
         receivedQuestions = questions
+    }
+    
+    func bodyReceivedForQuestion(question: Question!) {
+        bodyQuestion = question
     }
 }
