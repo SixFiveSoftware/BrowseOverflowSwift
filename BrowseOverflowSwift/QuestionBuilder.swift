@@ -41,7 +41,6 @@ class QuestionBuilder {
             let error = NSError(domain: QuestionBuilderErrorDomain, code: QuestionBuilderError.MissingData.rawValue, userInfo: [NSLocalizedDescriptionKey : "JSON Missing data"])
             return (nil, error)
         }
-//        return (nil, nil)
     }
     
     private func parseQuestions(questions: AnyObject) -> [Question] {
