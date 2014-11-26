@@ -11,4 +11,5 @@ import Foundation
 protocol StackOverflowManagerDelegate: class {
     func fetchingQuestionsFailedWithError(error: NSError)
     func didReceiveQuestions(questions: [Question])
+    func bodyReceivedForQuestion(question: Question!)
 }

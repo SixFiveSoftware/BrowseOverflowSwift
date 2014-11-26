@@ -13,4 +13,8 @@ class StackOverflowCommunicator {
     func searchForQuestionsWithTag(tag: String) {
         
     }
+    
+    func searchForBodyForQuestionWithID(questionID: Int) {
+        
+    }
 }

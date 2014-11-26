@@ -18,6 +18,7 @@ class StackOverflowManager {
     weak var delegate: StackOverflowManagerDelegate?
     var communicator: StackOverflowCommunicator?
     var questionBuilder: QuestionBuilder?
+    var questionNeedingBody: Question?
     
     init() {}
     
@@ -48,5 +49,23 @@ class StackOverflowManager {
                 delegate?.didReceiveQuestions(questions)
             }
         }
+    }
+    
+    func fetchBodyForQuestion(question: Question) {
+        questionNeedingBody = question
+        communicator?.searchForBodyForQuestionWithID(question.questionID)
+    }
+    
+    func fetchQuestionBodyFailedWithError(error: NSError) {
+        let errorInfo = [NSUnderlyingErrorKey : error]
+        tellDelegateAboutQuestionSearchError(errorInfo)
+    }
+    
+    func receivedQuestionBodyJSON(json: String) {
+        if questionBuilder == nil { return }
+        
+        questionBuilder!.fillInDetailsForQuestion(questionNeedingBody, fromJSON: json)
+        delegate?.bodyReceivedForQuestion(questionNeedingBody)
+        questionNeedingBody = nil
     }
 }

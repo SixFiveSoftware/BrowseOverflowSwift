@@ -14,6 +14,7 @@ class QuestionTests: XCTestCase {
     var question: Question!
     var lowScore: Answer!
     var highScore: Answer!
+    var asker: Person?
 
     override func setUp() {
         super.setUp()
@@ -35,6 +36,9 @@ class QuestionTests: XCTestCase {
         highScore = Answer()
         highScore.score = 4
         question.addAnswer(highScore)
+        
+        asker = Person(name: "Graham Lee", avatarLocation: "http://www.example.com/avatar.png")
+        question!.asker = asker
     }
     
     override func tearDown() {
@@ -76,5 +80,14 @@ class QuestionTests: XCTestCase {
         let lowIndex = find(answers, lowScore)!
         XCTAssertTrue(highIndex < lowIndex, "High-scoring answer comes first")
     }
+    
+    func testQuestionHasAnID() {
+        let questionID = 1234
+        question!.questionID = questionID
+        XCTAssertEqual(question!.questionID, questionID, "Question should have a unique ID from web API")
+    }
 
+    func testQuestionWasAskedBySomeone() {
+        XCTAssertEqual(question!.asker, asker!, "Question should be asked by someone")
+    }
 }

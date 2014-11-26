@@ -19,13 +19,5 @@ class Person: Equatable {
 }
 
 func ==(lhs: Person, rhs: Person) -> Bool {
-    /*
-    if let lefturl = lhs.avatarURL?.absoluteString {
-        if let righturl = rhs.avatarURL?.absoluteString {
-            return lhs.name == rhs.name && lefturl == righturl
-        }
-    }
-    return false
-    */
     return lhs.name == rhs.name && lhs.avatarURL?.absoluteString == rhs.avatarURL?.absoluteString
 }
