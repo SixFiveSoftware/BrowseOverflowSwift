@@ -20,7 +20,7 @@ class MockStackOverflowCommunicator: StackOverflowCommunicator {
         return _wasAskedToFetchBody
     }
     
-    override func searchForQuestionsWithTag(tag: String) {
+    override func searchForQuestionsWithTag(tag: String, completion: SearchAPICompletion? = nil) {
         _wasAskedToFetchQuestions = true
     }
     

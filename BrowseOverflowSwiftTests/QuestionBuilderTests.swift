@@ -90,6 +90,11 @@ class QuestionBuilderTests: XCTestCase {
     }
     
     */
+    
+    /*
+    questions URL = /2.2/questions?order=desc&sort=activity&site=stackoverflow
+    body URL = /2.2/questions/1083701?order=desc&sort=activity&site=stackoverflow&filter=!9YdnSJ*_S
+    */
     var questionBuilder: QuestionBuilder?
     var question: Question?
     let noQuestionsJSONString = "{\"noquestions\":true}"
